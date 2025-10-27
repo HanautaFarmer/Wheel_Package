@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Descarga FS 23 HaNaUtA</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      font-family: Arial;
+      background-image: url('HanautaMods.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: black;
+      color: white;
+      text-align: center;
+      text-shadow: 1px 1px 3px black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    button {
+      padding: 12px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      margin: 6px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px white;
+    }
+    .btn-sub {
+      background-color: #39FF14;
+      color: black;
+    }
+    .btn-drive {
+      background-color: #28a745;
+      color: white;
+    }
+    .btn-mega {
+      background-color: #dc3545;
+      color: white;
+    }
+    .btn-mediafire {
+      background-color: #007bff;
+      color: white;
+    }
+    .btn-youtube {
+      background-color: #ff0000;
+      color: white;
+    }
+    .btn-facebook {
+      background-color: #1877f2;
+      color: white;
+    }
+    #download-section, #redes-section {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 16px;
+    }
+    .message {
+      font-size: 18px;
+      margin: 4px 0;
+    }
+    .mensaje-final {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 1px 1px 3px black;
+      animation: aparecer 2s ease-in-out forwards;
+      opacity: 0;
+      max-width: 90%;
+    }
+    @keyframes aparecer {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮¡Descarga Exclusiva Paquete de Ruedas!🎮</h1>
+  <p id="instruccion">🔔No olvides Suscribirte a las Redes para seguir Apoyando el Contenido🔔</p>
+
+  <button id="btnSub" class="btn-sub" onclick="mostrarRedes()">😎Suscribirme y Desbloquear😎</button>
+
+  <!-- SECCIÓN DE REDES SOCIALES -->
+  <div id="redes-section">
+    <a href="https://www.youtube.com/@HanautaFarmer23" target="_blank" onclick="marcarClick('youtube')">
+      <button class="btn-youtube">
+        <img src="YouTube.png" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+        Seguir en YouTube
+        <img src="YouTube.png" style="height: 20px; vertical-align: middle; margin-left: 8px;">
+      </button>
+    </a>
+    <a href="https://www.facebook.com/FarmerNauta/" target="_blank" onclick="marcarClick('perfil')">
+      <button class="btn-facebook">
+        <img src="Facebook.png" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+        Ir al Perfil de Facebook
+        <img src="Facebook.png" style="height: 20px; vertical-align: middle; margin-left: 8px;">
+      </button>
+    </a>
+    <a href="https://www.facebook.com/share/g/17EPMFTVZE/" target="_blank" onclick="marcarClick('grupo')">
+      <button class="btn-facebook">
+        <img src="FarmerNautas.png" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+        Unirse al Grupo de Facebook
+        <img src="FarmerNautas.png" style="height: 20px; vertical-align: middle; margin-left: 8px;">
+      </button>
+    </a>
+  </div>
+
+  <!-- SECCIÓN DE DESCARGAS -->
+  <div id="download-section">
+    <p class="message">💪Gracias por el Apoyo💪</p>
+    <p class="message">🚜Ahora eres un Farmer Nauta🚜</p>
+    <p class="message">🥳Disfrútalo al Máximo🥳</p>
+
+    <a href="https://drive.google.com/file/d/1H7xdNJskquHiUp65mnN4cJoxNGCQw7aD/view?usp=sharing" target="_blank">
+      <button class="btn-drive">
+        <img src="Drive.png" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+        Drive
+        <img src="Drive.png" style="height: 20px; vertical-align: middle; margin-left: 8px;">
+      </button>
+    </a>
+    <a href="https://mega.nz/file/wYwmRbzJ#Ojx1xCTxeORWY-HOVVgLHucYd1YbP21FYZFO3RoZe-k" target="_blank">
+      <button class="btn-mega">
+        <img src="Mega.png" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+        Mega
+        <img src="Mega.png" style="height: 20px; vertical-align: middle; margin-left: 8px;">
+      </button>
+    </a>
+    <a href="https://www.mediafire.com/file/9hti1ir18qysfpw/Wheel_Package.zip/file" target="_blank">
+      <button class="btn-mediafire">
+        <img src="MediaFire.png" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+        MediaFire
+        <img src="MediaFire.png" style="height: 20px; vertical-align: middle; margin-left: 8px;">
+      </button>
+    </a>
+
+    <div class="mensaje-final">
+      🌟Comparte esta página, no el archivo. ¡Apóyame para seguir creciendo!🌟
+    </div>
+  </div>
+
+  <script>
+    let clicks = { youtube: false, perfil: false, grupo: false };
+
+    function mostrarRedes() {
+      const boton = document.getElementById("btnSub");
+      boton.innerText = "🔐Desbloquear🔐";
+      document.getElementById("instruccion").style.display = "none";
+      document.getElementById("redes-section").style.display = "flex";
+    }
+
+    function marcarClick(red) {
+      clicks[red] = true;
+
+      // Verifica si se hicieron los 3 clics
+      if (clicks.youtube && clicks.perfil && clicks.grupo) {
+        setTimeout(() => {
+          document.getElementById("redes-section").style.display = "none";
+          document.getElementById("btnSub").innerText = "🔓Desbloqueado🔓";
+          document.getElementById("download-section").style.display = "flex";
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+</html>
